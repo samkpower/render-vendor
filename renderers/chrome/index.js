@@ -319,80 +319,89 @@ var ChromeRenderer = exports.ChromeRenderer = function (_Renderer) {
                   type = type.length > 0 ? type : 'html';
                 }
 
-                if (!(waitForNavigation !== false)) {
-                  _context5.next = 11;
+                if (!(waitForNavigation !== null && waitForNavigation !== undefined)) {
+                  _context5.next = 16;
                   break;
                 }
 
+                if (!(waitForNavigation === false)) {
+                  _context5.next = 8;
+                  break;
+                }
+
+                return _context5.abrupt('return');
+
+              case 8:
                 if (!(waitForNavigation === Object(waitForNavigation))) {
-                  _context5.next = 9;
+                  _context5.next = 13;
                   break;
                 }
 
-                _context5.next = 7;
+                _context5.next = 11;
                 return page._chromePage.waitForNavigation(waitForNavigation);
 
-              case 7:
-                _context5.next = 11;
+              case 11:
+                _context5.next = 15;
                 break;
 
-              case 9:
-                _context5.next = 11;
+              case 13:
+                _context5.next = 15;
                 return page._chromePage.waitForNavigation({
                   waitUntil: 'networkidle',
                   networkIdleInflight: 0,
                   timeout: 0
                 });
 
-              case 11:
+              case 15:
                 delete options.waitForNavigation;
 
+              case 16:
                 _context5.t0 = type;
-                _context5.next = _context5.t0 === 'html' ? 15 : _context5.t0 === 'pdf' ? 19 : 28;
+                _context5.next = _context5.t0 === 'html' ? 19 : _context5.t0 === 'pdf' ? 23 : 32;
                 break;
 
-              case 15:
-                _context5.next = 17;
+              case 19:
+                _context5.next = 21;
                 return page._chromePage.content();
 
-              case 17:
+              case 21:
                 buffer = _context5.sent;
-                return _context5.abrupt('break', 32);
+                return _context5.abrupt('break', 36);
 
-              case 19:
+              case 23:
                 emulateMedia = options.emulateMedia;
 
                 if (!(emulateMedia !== null && emulateMedia !== undefined)) {
-                  _context5.next = 24;
+                  _context5.next = 28;
                   break;
                 }
 
-                _context5.next = 23;
+                _context5.next = 27;
                 return page._chromePage.emulateMedia(emulateMedia);
 
-              case 23:
+              case 27:
                 delete options.emulateMedia;
-
-              case 24:
-                _context5.next = 26;
-                return page._chromePage.pdf(options);
-
-              case 26:
-                buffer = _context5.sent;
-                return _context5.abrupt('break', 32);
 
               case 28:
                 _context5.next = 30;
-                return page._chromePage.screenshot(options);
+                return page._chromePage.pdf(options);
 
               case 30:
                 buffer = _context5.sent;
-                return _context5.abrupt('break', 32);
+                return _context5.abrupt('break', 36);
 
               case 32:
+                _context5.next = 34;
+                return page._chromePage.screenshot(options);
+
+              case 34:
+                buffer = _context5.sent;
+                return _context5.abrupt('break', 36);
+
+              case 36:
                 return _context5.abrupt('return', isString(filepath) ? filepath : buffer);
 
-              case 33:
+              case 37:
               case 'end':
                 return _context5.stop();
             }
