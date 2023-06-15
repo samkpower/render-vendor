@@ -6,7 +6,7 @@ import Renderer from '../../renderer';
 
 const { isString } = _;
 
-const DEFAULT_BOOT_OPTIONS = {}; // use puppeteer defaults, https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions
+const DEFAULT_BOOT_OPTIONS = { args: ['--no-sandbox', '--disable-setuid-sandbox'] }; // use puppeteer defaults, https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions
 
 export class ChromeRenderer extends Renderer {
   static get DEFAULT_BOOT_OPTIONS() {
