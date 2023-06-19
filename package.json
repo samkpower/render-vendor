@@ -9,6 +9,7 @@
     "render-vendor": "./bin/render-vendor"
   },
   "main": "src/renderer.js",
+  "type": "module",
   "scripts": {
     "build": "babel src -d .",
     "lint": "./node_modules/.bin/eslint src",
