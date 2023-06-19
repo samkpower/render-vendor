@@ -8,7 +8,7 @@
   "bin": {
     "render-vendor": "./bin/render-vendor"
   },
-  "main": "renderer.js",
+  "main": "src/renderer.js",
   "scripts": {
     "build": "babel src -d .",
     "lint": "./node_modules/.bin/eslint src",
